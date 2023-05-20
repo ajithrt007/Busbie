@@ -23,6 +23,9 @@ export default function RootLayout({ children }) {
     padding: "30px 20px",
     marginBottom: "2vw",
   };
+  function changeColor(whoisactive){
+    setIsActive(whoisactive);
+  }
   return (
     <html>
       <body style={{ backgroundColor: "#E8E8E8" }}>
@@ -41,7 +44,9 @@ export default function RootLayout({ children }) {
                   <NavbarOption
                     optionName="Revenue"
                     logo={faIndianRupeeSign}
-                    state={expand}                 
+                    state={expand}
+                    colorChange={changeColor}
+                    activecom={isActive}                 
                   />
                 </Link>
                 <Link href="/buses-routes" value="Buses and Routes">
@@ -49,6 +54,8 @@ export default function RootLayout({ children }) {
                     optionName="Buses and Routes"
                     logo={faBusSimple}
                     state={expand}
+                    colorChange={changeColor}
+                    activecom={isActive} 
                   />
                 </Link>
                 <Link href="/schedule" value="Schedule">
@@ -56,6 +63,8 @@ export default function RootLayout({ children }) {
                     optionName="Schedule"
                     logo={faCalendar}
                     state={expand}
+                    colorChange={changeColor}
+                    activecom={isActive}
                   />
                 </Link>
                 <Link href="/employee" value="Employee Management">
@@ -63,6 +72,8 @@ export default function RootLayout({ children }) {
                     optionName="Employee Management"
                     logo={faUsers}
                     state={expand}
+                    colorChange={changeColor}
+                    activecom={isActive} 
                   />
                 </Link>
                 <Link href="/notification" value="Notification">
@@ -70,13 +81,15 @@ export default function RootLayout({ children }) {
                     optionName="Notification"
                     logo={faBell}
                     state={expand}
+                    colorChange={changeColor}
+                    activecom={isActive} 
                   />
                 </Link>
               </div>
             </div>
           </div>
-          <div className="flex flex-col w-full p-[1.5vw] ml-[5vw]">
-            <div className="flex justify-between w-full">
+          <div className="flex flex-col w-full p-[1.5vw] ml-[87px]">
+            <div className="flex justify-between w-full items-center mb-[2vh]">
               <Time />
               <div className="p-[10px] bg-secondary rounded-lg flex gap-2 items-center">
                 Username

@@ -3,14 +3,22 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function NavbarOption(props) {
-  const { optionName, logo, state } = props;
+  const { optionName, logo, state, colorChange, activecom } = props;
   const property = state ? "block" : "none";
   const justify = state ? "unset" : "center";
   const [bg, setBg] = useState("#D9D9D9");
+  var varColor = 'black';
+  if(activecom == optionName){
+    varColor = '#D7425A'
+  }
+  else{
+    varColor = 'black'
+  }
   const optionButton = {
     backgroundColor: bg,
     padding: "15px 10px",
     justifyContent: justify,
+    color: varColor,
   };
   const buttonName = {
     display: property,
@@ -22,8 +30,11 @@ export default function NavbarOption(props) {
   function changeBack(){
     setBg("#D9D9D9")
   }
+  function setActive(){
+    colorChange(optionName);
+  }
   return (
-    <button className="flex gap-2 items-center w-full" style={optionButton} onMouseEnter={changeBG} onMouseLeave={changeBack}>
+    <button className="flex gap-2 items-center w-full" style={optionButton} onMouseEnter={changeBG} onMouseLeave={changeBack} onClick={setActive}>
       <div
         className="flex items-center"
         style={{ height: "30px", width: "30px", justifyContent: "center" }}
