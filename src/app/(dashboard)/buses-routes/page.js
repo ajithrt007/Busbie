@@ -1,6 +1,6 @@
 import React from "react";
 import Add from "@/component/Add";
-import Dropdown from "@/component/Dropdown";
+import DropdownCustom from "@/component/DropdownCustom";
 import RouteRow from "@/component/RouteRow";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
@@ -30,13 +30,14 @@ export default function BusRoute() {
     "Kannur",
   ];
   const rowStyle = {
-    padding: '0px 15px',
-  }
+    padding: "0px 15px",
+  };
   return (
     <>
       <Add buttonName="Add Route" />
+      <h1 className=" text-[#D7425A] font-bold text-3xl">Buses and Routes</h1>
       <div className="bg-white rounded-[10px] p-[20px] flex flex-col gap-5">
-        <h3>Routes</h3>
+        <h1>Routes</h1>
         <div className="flex flex-col gap-2">
           <div className="flex gap-5 items-center">
             <input
@@ -55,7 +56,12 @@ export default function BusRoute() {
               style={inputbox}
               className="bg-bg-color p-[10px] rounded-[10px]"
             />
-            <Dropdown optionValues={routeOption} defaultValue="" />
+            <DropdownCustom
+              optionValues={routeOption}
+              defaultValue="All Districts"
+              dropdownColor="#E8E8E8"
+              textColor="black"
+            />
             <button
               style={{
                 backgroundColor: "#E8E8E8",
@@ -69,33 +75,35 @@ export default function BusRoute() {
           <div className="flex flex-col gap-2">
             <p>8925 routes found</p>
             <div
-      className="flex rounded-[10px] items-center justify-between"
-      style={rowStyle}
-    >
-      <div className="flex w-full gap-4">
-        <p style={{ width: "5%" }}>Sl No</p>
-        <p style={{ width: "25%" }}>From {"<"}-{">"} To</p>
-        <p style={{ width: "10%" }}>No. of Buses</p>
-        <p style={{ width: "10%" }}>Service Time</p>
-        <p style={{ width: "18%" }}>Average Profit(in INR)</p>
-        <p style={{ width: "20%" }}>Average Expense(in INR)</p>
-      </div>
-      <div className="flex gap-5 items-center invisible">
-        <div
-          className="flex gap-2 items-center bg-bg-color"
-          style={{ borderRadius: "100px", padding: "5px 8px" }}
-        >
-          View
-          <FontAwesomeIcon icon={faLocationDot} className="h-[15px]" />
-        </div>
-        <div
-          className="flex gap-2 items-center bg-bg-color"
-          style={{ borderRadius: "100px", padding: "5px 8px" }}
-        >
-          <FontAwesomeIcon icon={faChevronDown} className="h-[15px]" />
-        </div>
-      </div>
-    </div>
+              className="flex rounded-[10px] items-center justify-between"
+              style={rowStyle}
+            >
+              <div className="flex w-full gap-4">
+                <p style={{ width: "5%" }}>Sl No</p>
+                <p style={{ width: "25%" }}>
+                  From {"<"}-{">"} To
+                </p>
+                <p style={{ width: "10%" }}>No. of Buses</p>
+                <p style={{ width: "10%" }}>Service Time</p>
+                <p style={{ width: "18%" }}>Average Profit(in INR)</p>
+                <p style={{ width: "20%" }}>Average Expense(in INR)</p>
+              </div>
+              <div className="flex gap-5 items-center invisible">
+                <div
+                  className="flex gap-2 items-center bg-bg-color"
+                  style={{ borderRadius: "100px", padding: "5px 8px" }}
+                >
+                  View
+                  <FontAwesomeIcon icon={faLocationDot} className="h-[15px]" />
+                </div>
+                <div
+                  className="flex gap-2 items-center bg-bg-color"
+                  style={{ borderRadius: "100px", padding: "5px 8px" }}
+                >
+                  <FontAwesomeIcon icon={faChevronDown} className="h-[15px]" />
+                </div>
+              </div>
+            </div>
             <div className="flex flex-col gap-2">
               <RouteRow
                 sl="1"

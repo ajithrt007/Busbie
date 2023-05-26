@@ -3,8 +3,8 @@ import React from "react";
 import { Dropdown } from "@nextui-org/react";
 
 export default function Dropdowns(props) {
-  const { optionValues,defaultValue } = props;
-  const [selected, setSelected] = React.useState(new Set(["All Districts"]));
+  const { optionValues, defaultValue, dropdownColor, textColor } = props;
+  const [selected, setSelected] = React.useState(new Set([defaultValue]));
 
   const selectedValue = React.useMemo(
     () => Array.from(selected).join(", ").replaceAll("_", " "),
@@ -12,7 +12,7 @@ export default function Dropdowns(props) {
   );
   return (
     <Dropdown>
-      <Dropdown.Button flat color="secondary" css={{ tt: "capitalize" }} style={{ backgroundColor: '#E8E8E8', color: 'black', borderRadius: '10px'}}>
+      <Dropdown.Button flat color="secondary" css={{ tt: "capitalize" }} style={{ backgroundColor: dropdownColor, color: textColor, borderRadius: '10px', zIndex: '0'}}>
         {selectedValue}
       </Dropdown.Button>
       <Dropdown.Menu

@@ -30,6 +30,9 @@ function page() {
     paddingLeft:'10px',
     color:'green',
 }
+const data = {
+  page : 'notification'
+}
   return (
     <>
     <div className="anima transition-all duration-75">
