@@ -1,17 +1,21 @@
-"use client";
-import React, { useState } from "react";
+// "use client";
+import React, { useContext } from "react";
 import DropdownCustom from "@/component/DropdownCustom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowAltCircleUp } from "@fortawesome/free-regular-svg-icons";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import Employee from "@/component/Employee";
+import {
+  faPlus,
+  faCloudArrowDown,
+  faArrowDownAZ,
+  faArrowDown19,
+} from "@fortawesome/free-solid-svg-icons";
+import EmployeeRows from "@/component/EmployeeRows";
 import EmpDetails from "@/component/EmpDetails";
+import { connectToDatabase } from "@/libs/MongoConnect";
 export default function AboutPage() {
   const inputbox = {
     border: "2px black",
     backgroundColor: "transparent",
   };
-
   const empNames = ["Everyone", "Conductor", "Driver", "Depot Manager"];
   const options = ["Both On Duty and Off Duty", "On Duty", "Off Duty"];
 
@@ -24,32 +28,39 @@ export default function AboutPage() {
     right: "30px",
     background: "#D7425A",
     color: "white",
-    padding: "8px",
+    padding: "10px 15px",
     borderRadius: "10px",
   };
   const emp = [emp1, emp2, emp3, emp4, emp5, emp6, emp7, emp8];
 
   // Use states to update the employee details field based on clicking the Employee field
-  const [selectedId, setSelectedId] = useState(emp1.id);
-  const [selectedName, setSelectedName] = useState(emp1.name);
-  const [selectedRole, setSelectedRole] = useState(emp1.role);
-  const [selectedContact, setSelectedContact] = useState(emp1.contact);
-  const [selectedBus, setSelectedBus] = useState(emp1.bus);
-  const handleClick = (id, name, role, contact, bus) => {
-    setSelectedId(id);
-    setSelectedName(name);
-    setSelectedRole(role);
-    setSelectedContact(contact);
-    setSelectedBus(bus);
-  };
-
+  // const [selectedId, setSelectedId] = useState(emp1.id);
+  // const [selectedName, setSelectedName] = useState(emp1.name);
+  // const [selectedRole, setSelectedRole] = useState(emp1.role);
+  // const [selectedContact, setSelectedContact] = useState(emp1.contact);
+  // const [selectedBus, setSelectedBus] = useState(emp1.bus);
+  // const handleClick = (id, name, role, contact, bus) => {
+  //   setSelectedId(id);
+  //   setSelectedName(name);
+  //   setSelectedRole(role);
+  //   setSelectedContact(contact);
+  //   setSelectedBus(bus);
+  // };
+  var data
+  // async function getData() {
+  //   const db = await connectToDatabase();
+  //   const collection = db.collection("employee");
+  //   data = await collection.find({}).skip(5).limit(10).toArray();
+  //   setLoadingState(false)
+  //   console.log(data);
+  //   console.log(typeof data);
+  // }
+  // getData();
   return (
-    <>
-      <div>
-        <h1 className="text-[#D7425A] font-bold text-3xl pb-5">Employees</h1>
-      </div>
+    <div className="flex flex-col gap-3">
+      <h1 className="text-[#D7425A] font-bold text-3xl pb-5">Employees</h1>
       <div className="bg-white rounded-[10px] p-[20px] flex flex-col gap-5 ">
-        <div className="flex flex-row gap-5 flex-wrap w-[75%]">
+        <div className="flex flex-row gap-5 flex-wrap w-[75%] items-center">
           <input
             type="text"
             name="RouteSearch"
@@ -58,7 +69,6 @@ export default function AboutPage() {
             style={inputbox}
             className="bg-bg-color p-[10px] rounded-[10px]"
           />
-
           <DropdownCustom
             optionValues={empNames}
             defaultValue="Everyone"
@@ -75,60 +85,57 @@ export default function AboutPage() {
             <p>Add Employee</p>
             <FontAwesomeIcon icon={faPlus} className="h-[25px]" />
           </button>
+          <button
+            style={{
+              backgroundColor: "#E8E8E8",
+              borderRadius: "10px",
+              padding: "10px 15px",
+            }}
+          >
+            <FontAwesomeIcon icon={faCloudArrowDown} />
+          </button>
         </div>
         <div className="flex flex-row gap-3 w-[60%]">
-          <span className="font-bold">80,925</span> employees found
-          <FontAwesomeIcon
-            icon={faArrowAltCircleUp}
-            className="h-[20px]  place-items-center color-green text-green-600 p-1"
-          />
+          <span className="font-bold">80,925</span>employees found
         </div>
-
-        <div className="flex flex-row w-[60%]">
-          <div
-            className="Name flex flex-row w-[36%] pl-10 flex-wrap"
-            style={{ textAlign: "center" }}
-          >
-            <p className="w-[60%]">Name</p>
-            <FontAwesomeIcon
-              icon={faArrowAltCircleUp}
-              className="h-[20px]  place-items-center color-green text-green-600 p-1"
-            />
-          </div>
-          <div className="Role px-[2vw]">Role</div>
-          <div className="Name flex flex-row px-[1vw]">
-            Experience (in years)
-            <FontAwesomeIcon
-              icon={faArrowAltCircleUp}
-              className="h-[20px]  place-items-center color-green text-green-600 p-1"
-            />
-          </div>
-          <div className="Role px-8">Contact</div>
-        </div>
-        {/* Employee List */}
-        <div className="flex flex-col gap-3 w-[65%] p-5 ">
-          {emp.map((msg) => (
-            <li key={msg.id} className="p-2 list-none">
-              <Employee
-                props={msg}
-                isSelected={selectedId === msg.id}
-                onClick={handleClick}
-                id={msg.id}
+        <div className="flex flex-row">
+          <div className="items-center flex flex-row gap-2">
+            <p className="">Name</p>
+            <button>
+              <FontAwesomeIcon
+                icon={faArrowDownAZ}
+                className="h-[16px] place-items-center color-black text-black"
               />
-            </li>
-          ))}
+            </button>
+          </div>
+          <p>PEN</p>
+          <div className="items-center flex flex-row gap-2">
+            DOB
+            <FontAwesomeIcon
+              icon={faArrowDown19}
+              className="h-[16px] place-items-center color-black text-black"
+            />
+          </div>
+          <div className="items-center flex flex-row gap-2">
+            <p className="">Unit</p>
+            <button>
+              <FontAwesomeIcon
+                icon={faArrowDownAZ}
+                className="h-[16px] place-items-center color-black text-black"
+              />
+            </button>
+          </div>
         </div>
-        {console.log()}
-        {/* Displaying Employee Details */}
+        <EmployeeRows rowData={data}/>       
         <EmpDetails
-          selectedId={selectedId}
-          selectedName={selectedName}
-          selectedRole={selectedRole}
-          selectedContact={selectedContact}
-          selectedBus={selectedBus}
+        // selectedId={selectedId}
+        // selectedName={selectedName}
+        // selectedRole={selectedRole}
+        // selectedContact={selectedContact}
+        // selectedBus={selectedBus}
         />
       </div>
-    </>
+    </div>
   );
 }
 

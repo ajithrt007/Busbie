@@ -4,8 +4,7 @@ import {
   faLocationDot,
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
-export default function RouteRow(props) {
-  const { sl, fromto, nob, stime, avrpro, avgexp } = props;
+export default function RouteRow({ sl, fromto, nob, stime, avrpro, avgexp }) {
   const rowStyle = {
     padding: "10px 15px",
   };

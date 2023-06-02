@@ -1,4 +1,3 @@
-'use client'
 import './../globals.css'
 import Time from "@/component/Time";
 import Sidebar from "@/component/Sidebar";

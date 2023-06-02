@@ -1,5 +1,5 @@
 import React from "react";
-export default function Notifmsg({props}) {
+export default function Notifmsg(props) {
     return(
         <>
         <div className="bg-white rounded-[10px] p-[10px] m-10">

@@ -87,7 +87,7 @@ export default function Revenue() {
     setWidth(div.offsetWidth);
   }, []);
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-3">
       <h1 className=" text-[#D7425A] font-bold text-3xl">Revenue</h1>
       <div className="bg-white rounded-[10px] p-[20px] flex flex-col gap-5">
         <div className="flex flex-col gap-5 border-b-2">

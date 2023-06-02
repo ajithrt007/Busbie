@@ -1,9 +1,6 @@
 import React from 'react';
 
-export default function AboutPage() {
-  // const data = {
-  //   page : 'schedule'
-  // }
+export default function Schedule() {
   return (
     <div>
       <h1>About</h1>

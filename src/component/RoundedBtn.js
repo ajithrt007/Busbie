@@ -4,7 +4,7 @@ export default function RoundedBtn(props){
     const {buttonName, actve} = props;
     const [btColor,setBtColor] = useState('#E8E8E8')
     const buttonStyle={
-        background: btColor,
+        backgroundColor: btColor,
         padding: "10px 15px",
         borderRadius: '100px',
     }
