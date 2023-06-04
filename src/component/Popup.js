@@ -1,7 +1,7 @@
 "use client"
 import Map from './Map'
 import React, { useState } from 'react'
-import Modal from 'react-modal'
+// import Modal from 'react-modal'
 const Popup = () => {
    const [isOpen, setIsOpen] = useState(false)
    const customStyles = {
@@ -23,10 +23,10 @@ const Popup = () => {
    return (
       <div>
          <button onClick={() => setIsOpen(true)}>Open Modal</button>
-         <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)} style={customStyles}>
+         {/* <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)} style={customStyles}>
             <Map/>
-            {/* <button className='font-bold' onClick={() => setIsOpen(false)}>Close Window</button> */}
-         </Modal>
+            <button className='font-bold' onClick={() => setIsOpen(false)}>Close Window</button>
+         </Modal> */}
       </div>
    )
 }
