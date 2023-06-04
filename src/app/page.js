@@ -1,6 +1,6 @@
 "use client";
 import "./globals.css";
-import React, { useState } from "react";
+import React, { useState,createContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/navigation";
@@ -8,10 +8,9 @@ import { useRouter } from "next/navigation";
 export default async function Login() {
   const router = useRouter();
   var username, password;
-
   function check() {
     fetch(
-      "http://localhost:3000/api/login?username=${username}&password=${password}"
+      "http://localhost:3000/api/login?username=" + iusername + "&password=" + ipassword
     )
       .then((response) => response.json())
       .then((data) => {
