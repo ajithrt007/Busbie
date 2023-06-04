@@ -8,7 +8,7 @@ import {
   faArrowDownAZ,
   faArrowDown19,
 } from "@fortawesome/free-solid-svg-icons";
-import EmployeeRows from "@/component/EmployeeRows";
+// import EmployeeRows from "@/component/EmployeeRows";
 import EmpDetails from "@/component/EmpDetails";
 import { connectToDatabase } from "@/libs/MongoConnect";
 export default function AboutPage() {
@@ -126,7 +126,7 @@ export default function AboutPage() {
             </button>
           </div>
         </div>
-        <EmployeeRows rowData={data}/>       
+        {/* <EmployeeRows rowData={data}/>        */}
         <EmpDetails
         // selectedId={selectedId}
         // selectedName={selectedName}
