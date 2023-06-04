@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Notifmsg from '@/component/Notifmsg'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
-function page() {
+function Page() {
   // const [ready, setRead]=useState(false)
   const [unreadMessages, setUnreadMessages] = useState([
     msg1,
@@ -75,4 +75,4 @@ const data = {
  const msg6= {id:6 ,msg: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo repellendus doloribus ipsum!", date: "13-12-2002", time: "13:00", type: "Bus BreakDown", read:false};
 
 
-export default page
+export default Page
