@@ -35,8 +35,7 @@ const data = {
 }
   return (
     <>
-    <div className="anima transition-all duration-75">
-      
+    <div className="anima transition-all duration-75">      
       <h1 className=" text-[#D7425A] font-bold text-3xl pb-5">Notifications</h1>
       <h2 className="font-bold"> Unread Notifications</h2>
         <ul className="notif flex flex-col p-5">
@@ -56,8 +55,7 @@ const data = {
               <Notifmsg props={message}/>    
             </li>
           ))}  
-        </ul>
-            
+        </ul>            
       </div>
       </>
   )

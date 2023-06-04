@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from "react";
+import Employee from "./Employee";
 export default function EmployeeRows({rowData}){
     const [loading, setLoading] = useState(true);
     function changeLoadingState(load){
