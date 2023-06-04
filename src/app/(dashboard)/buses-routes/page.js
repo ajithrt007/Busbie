@@ -2,6 +2,7 @@ import React from "react";
 import Add from "@/component/Add";
 import DropdownCustom from "@/component/DropdownCustom";
 import RouteRow from "@/component/RouteRow";
+import Popup from "@/component/Popup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -197,6 +198,8 @@ export default function BusRoute() {
           </div>
         </div>
       </div>
+
+      <Popup/>
     </>
   );
 }

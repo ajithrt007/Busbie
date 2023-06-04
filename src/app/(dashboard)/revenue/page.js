@@ -138,7 +138,7 @@ export default function Revenue() {
               <div className="flex flex-col gap-3">
                 <div className="flex items-center">
                   <FontAwesomeIcon icon={faIndianRupeeSign} />
-                  <p>1000230</p>
+                  <p>100023450</p>
                 </div>
                 <DropdownCustom
                   optionValues={dayOption}

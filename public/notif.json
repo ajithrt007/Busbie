@@ -1,0 +1,106 @@
+[
+    {
+     "ID": 1,
+     "Type": "New Message",
+     "Message": "You have received a new message from a user. Please log in to your account and navigate to the Messages section to view and reply.",
+     "Timestamp": "2023-05-20 10:30:00",
+     "Status": "Unread"
+    },
+    {
+     "ID": 2,
+     "Type": "Friend Request",
+     "Message": "John Doe sent you a friend request. Visit your profile page to accept or reject the request.",
+     "Timestamp": "2023-05-19 14:45:00",
+     "Status": "Read"
+    },
+    {
+     "ID": 3,
+     "Type": "Upcoming Event",
+     "Message": "There is an upcoming event in your area. Save the date and make sure to attend for a great time!",
+     "Timestamp": "2023-05-18 9:15:00",
+     "Status": "Unread"
+    },
+    {
+     "ID": 4,
+     "Type": "System Maintenance",
+     "Message": "The website will be undergoing maintenance tonight. We apologize for any inconvenience caused.",
+     "Timestamp": "2023-05-17 20:00:00",
+     "Status": "Read"
+    },
+    {
+     "ID": 5,
+     "Type": "New Feature Announcement",
+     "Message": "We have added a new feature to the website. Check it out now and enhance your user experience.",
+     "Timestamp": "2023-05-16 16:30:00",
+     "Status": "Unread"
+    },
+    {
+     "ID": 6,
+     "Type": "Product Update",
+     "Message": "A new version of the product is available. Download and install the update to enjoy the latest enhancements.",
+     "Timestamp": "2023-05-15 11:00:00",
+     "Status": "Read"
+    },
+    {
+     "ID": 7,
+     "Type": "Payment Confirmation",
+     "Message": "Your payment has been successfully processed. Thank you for your purchase!",
+     "Timestamp": "2023-05-14 9:30:00",
+     "Status": "Read"
+    },
+    {
+     "ID": 8,
+     "Type": "Important Announcement",
+     "Message": "Please read the latest news and updates on our website for important information regarding our services.",
+     "Timestamp": "2023-05-13 13:15:00",
+     "Status": "Unread"
+    },
+    {
+     "ID": 9,
+     "Type": "Account Activation",
+     "Message": "Your account has been successfully activated. Log in now to start exploring our platform.",
+     "Timestamp": "2023-05-12 17:45:00",
+     "Status": "Read"
+    },
+    {
+     "ID": 10,
+     "Type": "Event Registration",
+     "Message": "Register now for the upcoming event. Limited spots available. Don't miss out on this exciting opportunity!",
+     "Timestamp": "2023-05-11 8:30:00",
+     "Status": "Read"
+    },
+    {
+     "ID": 11,
+     "Type": "Survey Invitation",
+     "Message": "Participate in our customer satisfaction survey and stand a chance to win exciting prizes. Your feedback is valuable to us.",
+     "Timestamp": "2023-05-10 12:45:00",
+     "Status": "Unread"
+    },
+    {
+     "ID": 12,
+     "Type": "Special Discount Offer",
+     "Message": "Enjoy a 20% discount on selected items. Visit our website or store to avail of this limited-time offer.",
+     "Timestamp": "2023-05-09 15:30:00",
+     "Status": "Read"
+    },
+    {
+     "ID": 13,
+     "Type": "Website Downtime",
+     "Message": "The website will be temporarily unavailable due to scheduled maintenance. We apologize for the inconvenience caused.",
+     "Timestamp": "2023-05-08 19:00:00",
+     "Status": "Read"
+    },
+    {
+     "ID": 14,
+     "Type": "New Blog Post",
+     "Message": "Check out our latest blog post on exciting topics. Visit our blog section now and stay informed.",
+     "Timestamp": "2023-05-07 10:15:00",
+     "Status": "Unread"
+    },
+    {
+     "ID": 15,
+     "Type": "Product Out of Stock",
+     "Message": "The product you ordered is currently out of stock. We are working on restocking it soon. Thank you for your patience.",
+     "Timestamp": "2023-05-06 16:30:00"
+    }
+   ]

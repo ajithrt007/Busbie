@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 export default async function Login() {
   const router = useRouter();
-  var username, password;
+  var iusername, ipassword;
   function check() {
     fetch(
       "http://localhost:3000/api/login?username=" + iusername + "&password=" + ipassword
@@ -18,14 +18,14 @@ export default async function Login() {
         if (data["authorized"] == true) {
           router.push("/revenue");
         } else {
-          username = "";
-          password = "";
+          iusername = "";
+          ipassword = "";
           console.log("Wrong Credentials");
         }
       })
       .catch((error) => {
-        username = "";
-        password = "";
+        iusername = "";
+       ipassword = "";
         console.log("Some Error happend");
       });
   }
@@ -54,7 +54,7 @@ export default async function Login() {
             placeholder="Username"
             className="bg-white p-[10px] rounded-[10px]"
             onChange={(e) => {
-              username = e.target.value;
+              iusername = e.target.value;
             }}
           />
           <input
@@ -64,7 +64,7 @@ export default async function Login() {
             placeholder="Password"
             className="bg-white p-[10px] rounded-[10px]"
             onChange={(e) => {
-              password = e.target.value;
+              ipassword = e.target.value;
             }}
           />
           <p>Forgot Password</p>
