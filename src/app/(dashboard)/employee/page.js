@@ -11,7 +11,6 @@ import {
 import EmployeeRows from "@/component/EmployeeRows";
 import EmpDetails from "@/component/EmpDetails";
 export default function AboutPage() {
-
   const inputbox = {
     border: "2px black",
     backgroundColor: "transparent",
@@ -45,7 +44,7 @@ export default function AboutPage() {
   //   setSelectedContact(contact);
   //   setSelectedBus(bus);
   // };
-  var data
+  var data;
   // async function getData() {
   //   const db = await connectToDatabase();
   //   const collection = db.collection("employee");
@@ -55,24 +54,25 @@ export default function AboutPage() {
   //   console.log(typeof data);
   // }
   // getData();
-  const [employees, setEmployees] = useState({})
+  const [employees, setEmployees] = useState([]);
   const [loading, setLoading] = useState(true);
-  if(loading){fetch(
-    "http://localhost:3000/api/get_employee?skipVal=0"
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      if (data != true) { 
-        console.log("Employee load data fetched");
-        setEmployees(data)
-        setLoading(false)
-      } else {
-        console.log("Couldn't load data");
-      }
-    })
-    .catch((error) => {
-      console.log("Some Error happend in fetching data");
-    });}
+  if (loading) {
+    fetch("http://localhost:3000/api/get_employee?skipVal=0")
+      .then((response) => response.json())
+      .then((data) => {
+        if (data != true) {
+          console.log("Employee load data fetched");
+          setEmployees(data);
+          setLoading(false);
+        } else {
+          console.log("Couldn't load data");
+        }
+      })
+      .catch((error) => {
+        console.log("Some Error happend in fetching data");
+      });
+  }
+  console.log("Employee Component is loaded");
   return (
     <div className="flex flex-col gap-3">
       <h1 className="text-[#D7425A] font-bold text-3xl pb-5">Employees</h1>
@@ -143,7 +143,9 @@ export default function AboutPage() {
             </button>
           </div>
         </div>
-        <EmployeeRows rowData={employees} loadingStatus={loading}/>       
+        <div className="flex flex-col gap-3 w-[65%]">
+          {loading ? <p>loading....</p> : <EmployeeRows rowData={employees} />}
+        </div>
         <EmpDetails
         // selectedId={selectedId}
         // selectedName={selectedName}
