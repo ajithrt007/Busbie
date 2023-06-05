@@ -9,7 +9,7 @@ const style2 = {
   border: "3px solid #888888",
   cursor: 'pointer'
 };
-function Employee({ employee, onClick, id, isSelected,dp }) {
+function Employee({ name, position, dob, isSelected,dp,unit,pen,id }) {
   // const handleClick = () => {
   //   onClick(id, props.name, props.role, props.contact, props.bus);
   // };
@@ -27,12 +27,12 @@ function Employee({ employee, onClick, id, isSelected,dp }) {
           style={{ width: "3em", borderRadius:'100px'}}
         />
         <div className="flex flex-col ">
-          <p className="flex">{employee["Name"]}</p>
-          <p>{employee["Present Grade"]}</p>
+          <p className="flex">{name}</p>
+          <p>{position}</p>
         </div>
-        <p>{employee["DOB"]}</p>
+        <p>{dob}</p>
         <p>{employee["PEN"]}</p>
-        <p>{employee["Unit"]}</p>
+        <p>{unit}</p>
       </div>
     </>
   );

@@ -1,5 +1,5 @@
-// "use client";
-import React, { useContext } from "react";
+"use client";
+import React, { useState } from "react";
 import DropdownCustom from "@/component/DropdownCustom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -8,10 +8,10 @@ import {
   faArrowDownAZ,
   faArrowDown19,
 } from "@fortawesome/free-solid-svg-icons";
-// import EmployeeRows from "@/component/EmployeeRows";
+import EmployeeRows from "@/component/EmployeeRows";
 import EmpDetails from "@/component/EmpDetails";
-import { connectToDatabase } from "@/libs/MongoConnect";
 export default function AboutPage() {
+
   const inputbox = {
     border: "2px black",
     backgroundColor: "transparent",
@@ -31,7 +31,6 @@ export default function AboutPage() {
     padding: "10px 15px",
     borderRadius: "10px",
   };
-  const emp = [emp1, emp2, emp3, emp4, emp5, emp6, emp7, emp8];
 
   // Use states to update the employee details field based on clicking the Employee field
   // const [selectedId, setSelectedId] = useState(emp1.id);
@@ -56,6 +55,24 @@ export default function AboutPage() {
   //   console.log(typeof data);
   // }
   // getData();
+  const [employees, setEmployees] = useState({})
+  const [loading, setLoading] = useState(true);
+  if(loading){fetch(
+    "http://localhost:3000/api/get_employee?skipVal=0"
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      if (data != true) { 
+        console.log("Employee load data fetched");
+        setEmployees(data)
+        setLoading(false)
+      } else {
+        console.log("Couldn't load data");
+      }
+    })
+    .catch((error) => {
+      console.log("Some Error happend in fetching data");
+    });}
   return (
     <div className="flex flex-col gap-3">
       <h1 className="text-[#D7425A] font-bold text-3xl pb-5">Employees</h1>
@@ -126,7 +143,7 @@ export default function AboutPage() {
             </button>
           </div>
         </div>
-        {/* <EmployeeRows rowData={data}/>        */}
+        <EmployeeRows rowData={employees} loadingStatus={loading}/>       
         <EmpDetails
         // selectedId={selectedId}
         // selectedName={selectedName}
@@ -138,68 +155,3 @@ export default function AboutPage() {
     </div>
   );
 }
-
-const emp1 = {
-  id: 1,
-  name: "Tapasvi Amruthalal",
-  role: "driver",
-  experience: "2",
-  contact: "9870193811",
-  bus: "kl032145",
-};
-const emp2 = {
-  id: 2,
-  name: "Vijayalekshmy",
-  role: "driver",
-  experience: "2",
-  contact: "9872863811",
-  bus: "kl032345",
-};
-const emp3 = {
-  id: 3,
-  name: "Athira",
-  role: "conductor",
-  experience: "4",
-  contact: "9870345411",
-  bus: "kl03LS45",
-};
-const emp4 = {
-  id: 4,
-  name: "Vijayalekshmy",
-  role: "conductor",
-  experience: "2",
-  contact: "9870193811",
-  bus: "kl0321F5",
-};
-const emp5 = {
-  id: 5,
-  name: "Roshni",
-  role: "driver",
-  experience: "1",
-  contact: "9873633811",
-  bus: "kl032F25",
-};
-const emp6 = {
-  id: 6,
-  name: "Ajith",
-  role: "Driver",
-  experience: "1",
-  contact: "9824233811",
-  bus: "kl032F25",
-};
-const emp7 = {
-  id: 7,
-  name: "Subramaniam Swamy",
-  role: "Conductor",
-  experience: "5",
-  contact: "9870224811",
-  bus: "kl032F25",
-};
-const emp8 = {
-  id: 8,
-  name: "Gokul",
-  role: "driver",
-  experience: "8",
-  contact: "9872342811",
-  bus: "kl032F25",
-};
