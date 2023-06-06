@@ -45,15 +45,6 @@ export default function AboutPage() {
   //   setSelectedBus(bus);
   // };
   var data;
-  // async function getData() {
-  //   const db = await connectToDatabase();
-  //   const collection = db.collection("employee");
-  //   data = await collection.find({}).skip(5).limit(10).toArray();
-  //   setLoadingState(false)
-  //   console.log(data);
-  //   console.log(typeof data);
-  // }
-  // getData();
   const [employees, setEmployees] = useState([]);
   const [loading, setLoading] = useState(true);
   if (loading) {
@@ -115,33 +106,23 @@ export default function AboutPage() {
         <div className="flex flex-row gap-3 w-[60%]">
           <span className="font-bold">80,925</span>employees found
         </div>
-        <div className="flex flex-row">
-          <div className="items-center flex flex-row gap-2">
-            <p className="">Name</p>
-            <button>
-              <FontAwesomeIcon
-                icon={faArrowDownAZ}
-                className="h-[16px] place-items-center color-black text-black"
-              />
-            </button>
+        <div className="px-2 rounded-[10px] flex flex-row">
+          <img
+            src="https://i.pravatar.cc/300"
+            alt="Not available"
+            style={{
+              width: "50px",
+              height: "0px",
+              borderRadius: "100px",
+              opacity: 0,
+            }}
+          />
+          <div className="flex flex-col" style={{ marginLeft: "20px" }}>
+            <p style={{ width: "200px" }}>Name</p>
           </div>
-          <p>PEN</p>
-          <div className="items-center flex flex-row gap-2">
-            DOB
-            <FontAwesomeIcon
-              icon={faArrowDown19}
-              className="h-[16px] place-items-center color-black text-black"
-            />
-          </div>
-          <div className="items-center flex flex-row gap-2">
-            <p className="">Unit</p>
-            <button>
-              <FontAwesomeIcon
-                icon={faArrowDownAZ}
-                className="h-[16px] place-items-center color-black text-black"
-              />
-            </button>
-          </div>
+          <p style={{ width: "75px" }}>DOB</p>
+          <p style={{ width: "75px" }}>PEN</p>
+          <p style={{ width: "200px" }}>Unit</p>
         </div>
         <div className="flex flex-col gap-3 w-[65%]">
           {loading ? <p>loading....</p> : <EmployeeRows rowData={employees} />}

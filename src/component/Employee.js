@@ -9,18 +9,11 @@ const style2 = {
   border: "3px solid #888888",
   cursor: "pointer",
 };
-export default function Employee({
-  name,
-  position,
-  dob,
-  isSelected,
-  dp,
-  unit,
-  pen,
-  id,
-}) {
+export default function Employee({ name, position, dob, dp, unit, pen, id }) {
+  var isSelected;
   const handleClick = () => {
-    onClick(id, props.name, props.role, props.contact, props.bus);
+    isSelected = true;
+    // onClick(id, props.name, props.role, props.contact, props.bus);
   };
 
   return (
@@ -33,15 +26,15 @@ export default function Employee({
       <img
         src={dp}
         alt="Not available"
-        style={{ width: "3em", borderRadius: "100px" }}
+        style={{ width: "50px", height: "50px", borderRadius: "100px" }}
       />
-      <div className="flex flex-col ">
-        <p className="flex">{name}</p>
+      <div className="flex flex-col" style={{ marginLeft: "20px" }}>
+        <p style={{ width: "200px" }}>{name}</p>
         <p>{position}</p>
       </div>
-      <p>{dob}</p>
-      <p>{pen}</p>
-      <p>{unit}</p>
+      <p style={{ width: "75px" }}>{dob}</p>
+      <p style={{ width: "75px" }}>{pen}</p>
+      <p style={{ width: "200px" }}>{unit}</p>
     </div>
   );
 }
