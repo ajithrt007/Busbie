@@ -4,7 +4,7 @@ import Notifmsg from '@/component/Notifmsg'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
 function Page() {
-  // const [ready, setRead]=useState(false)
+  const [ready, setRead]=useState(false)
   const [unreadMessages, setUnreadMessages] = useState([
     msg1,
     msg2,

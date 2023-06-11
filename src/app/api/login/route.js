@@ -22,14 +22,17 @@ export async function GET(request) {
       .db("busbieData")
       .collection("user")
       .findOne({ username: iusername, password: ipassword });
-    console.log(user);
+    // console.log(user);
+
     if (user != null) {
-      return NextResponse.json({ authorized: true });
-    } else {
+      return NextResponse.json({ authorized: true, name: user.name });
+    }
+    
+    else {
       return NextResponse.json({ authorized: false });
     }
   } catch (error) {
     console.log(error);
-    return NextResponse.json({ authorized: "Error Occurred" });
+    return NextResponse.json({ authorized: false });
   }
 }

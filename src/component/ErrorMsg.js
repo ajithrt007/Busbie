@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 export default function ErrorMsg({ msg }) {
-  const [displayVal, setDisplayVal] = useState("flex");
+  console.log("called")
+  // const [displayVal, setDisplayVal] = useState("flex");
   var stylerror = {
     display: "flex",
     backgroundColor: "rgb(220 38 38)",
@@ -13,10 +14,16 @@ export default function ErrorMsg({ msg }) {
     position: "relative",
     alignItems: "center",
   };
+  // useEffect(()=>{
+  //   console.log("use effect called")
+  //   setTimeout(()=>{
+  //     setDisplayVal("none")
+  //   },4000)
+  // },[])
   return (
     <div
       style={{
-        display: displayVal,
+        display: "flex",
         position: "absolute",
         bottom: "15px",
         zIndex: "30",
@@ -28,7 +35,7 @@ export default function ErrorMsg({ msg }) {
       <div style={stylerror}>
         <button
           onClick={(displayVal) => {
-            setDisplayVal("none");
+            // setDisplayVal("none");
             console.log("Close button clicked");
           }}
         >

@@ -68,6 +68,9 @@ export default function AboutPage() {
             id=""
             style={inputbox}
             className="bg-bg-color p-[10px] rounded-[10px]"
+            onChange={()=>{
+              searchKey = e.target.value
+            }}
           />
           <DropdownCustom
             optionValues={empNames}
@@ -75,17 +78,17 @@ export default function AboutPage() {
             dropdownColor="#E8E8E8"
             textColor="black"
           />
-          <DropdownCustom
+          {/* <DropdownCustom
             optionValues={options}
             defaultValue="Both On Duty and Off Duty"
             dropdownColor="#E8E8E8"
             textColor="black"
-          />
+          /> */}
           <button style={style} className="hover:bg-[#D7425A]/90 ">
             <p>Add Employee</p>
             <FontAwesomeIcon icon={faPlus} className="h-[25px]" />
           </button>
-          <button
+          {/* <button
             style={{
               backgroundColor: "#E8E8E8",
               borderRadius: "10px",
@@ -93,7 +96,7 @@ export default function AboutPage() {
             }}
           >
             <FontAwesomeIcon icon={faCloudArrowDown} />
-          </button>
+          </button> */}
         </div>
         <div className="flex flex-row gap-3 w-[60%]">
           <span className="font-bold">{count}</span>employees found

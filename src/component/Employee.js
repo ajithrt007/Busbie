@@ -45,14 +45,14 @@ export default function Employee({ employee, selectedPerson }) {
         <p style={{ width: "75px", minWidth: "75px" }}>{employee["PEN"]}</p>
         <p style={{ width: "200px", minWidth: "200px" }}>{employee["Unit"]}</p>
         <div className="flex items-center h-full">
-          <div
+          {/* <div
             style={{
               borderRadius: "100px",
               height: "8px",
               width: "8px",
               backgroundColor: "#84cc16 ",
             }}
-          ></div>
+          ></div> */}
         </div>
       </div>
     </div>

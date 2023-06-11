@@ -1,43 +1,46 @@
 "use client";
 import "./globals.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/navigation";
 import ErrorMsg from "@/component/ErrorMsg";
 
-export default async function Login() {
+export default function Login() {
   const router = useRouter();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  var inputUsername, inputPassword;
   const [error, setError] = useState({ status: false, msg: "" });
-
-  function check() {
-    fetch(
+  // console.log(error)
+ const [errorStatus,serErrorStatus] = useState(false)
+  async function check() {
+    await fetch(
       "http://localhost:3000/api/login?username=" +
-        username +
+        inputUsername +
         "&password=" +
-        password
+        inputPassword
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log("data is ", data["authorized"]);
-        if (data["authorized"] == true) {
+
+        if (data.authorized == true) {
           router.push("/revenue");
         } else {
-          setUsername("");
-          setPassword("");
           setError({ status: true, msg: "Wrong Credentials" });
+          serErrorStatus(true)
           console.log("Wrong Credentials");
         }
       })
       .catch((error) => {
-        setUsername("");
-        setPassword("");
         setError({ status: true, msg: "400 Server Error" });
+        serErrorStatus(true)
         console.log("Some Error happend");
       });
   }
+  useEffect(()=>{
+    setTimeout(()=>{
+      serErrorStatus(false)
+    },4000)
+  },[error])
   return (
     <div className="flex h-screen justify-between">
       <div className="w-full py-[3vw] px-[4vw] gap-[15vh] flex flex-col">
@@ -63,20 +66,19 @@ export default async function Login() {
             placeholder="Username"
             className="bg-white p-[10px] rounded-[10px]"
             onChange={(e) => {
-              setUsername(e.target.value);
+              inputUsername = e.target.value;
             }}
           />
           <input
-            type="text"
+            type="password"
             name=""
             id=""
             placeholder="Password"
             className="bg-white p-[10px] rounded-[10px]"
             onChange={(e) => {
-              setPassword(e.target.value);
+              inputPassword = e.target.value;
             }}
           />
-          {/* <p>Forgot Password</p> */}
           <div className="flex justify-center">
             <button
               style={{
@@ -98,7 +100,7 @@ export default async function Login() {
         alt="Bus stop morning"
         className="h-screen w-[80vw] object-cover"
       />
-      {error.status ? <ErrorMsg msg={error.msg} /> : <div></div>}
+      {errorStatus && <ErrorMsg msg={error.msg}/>}
     </div>
   );
 }
