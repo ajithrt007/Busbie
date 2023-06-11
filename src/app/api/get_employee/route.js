@@ -22,7 +22,7 @@ export async function GET(request) {
       .collection("employee")
       .find()
       .skip(skipVal)
-      .limit(20)
+      // .limit()
       .sort({ Name: 1 })
       .toArray();
     // console.log(employees)

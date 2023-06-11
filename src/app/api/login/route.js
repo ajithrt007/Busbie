@@ -2,11 +2,10 @@ import { NextResponse } from "next/server";
 import { MongoClient, ServerApiVersion } from "mongodb";
 
 export async function GET(request) {
-  var user
+  var user = null;
   const url = new URL(request.url);
   const iusername = url.searchParams.get("username");
   const ipassword = url.searchParams.get("password");
-  console.log(iusername,ipassword)
   const client = new MongoClient(process.env.MONGODB_URI, {
     serverApi: {
       version: ServerApiVersion.v1,
@@ -18,11 +17,12 @@ export async function GET(request) {
   // Send a ping to confirm a successful connection
   try {
     await client.db("admin").command({ ping: 1 });
-    console.log(  
-      "Pinged your deployment.Successfully connected to MongoDB!"
-    );
-    user = await client.db("busbieData").collection("user").findOne({ username: iusername, password: ipassword })
-    console.log(user)
+    console.log("Pinged your deployment.Successfully connected to MongoDB!");
+    user = await client
+      .db("busbieData")
+      .collection("user")
+      .findOne({ username: iusername, password: ipassword });
+    console.log(user);
     if (user != null) {
       return NextResponse.json({ authorized: true });
     } else {
