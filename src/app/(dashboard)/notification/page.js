@@ -4,7 +4,7 @@ import Notifmsg from '@/component/Notifmsg'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
 function Page() {
-  const [ready, setRead]=useState(false)
+  // const [ready, setRead]=useState(false)
   const [unreadMessages, setUnreadMessages] = useState([
     msg1,
     msg2,
@@ -62,9 +62,9 @@ const data = {
 }
 
 
- const msg1= {id:1, msg: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque qui expedita excepturi eveniet natus maxime fuga assumenda consequuntur a quam.", date: "13-12-2002", time: "13:00", type: "Bus BreakDown", read:false};
+ const msg1= {id:1, msg: "Bus Break down at Pappanamcode. Send technicians ", date: "13-12-2002", time: "13:00", type: "Bus BreakDown", read:false};
 
- const msg2= {id:2, msg: "   Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam magnam laborum tempora? Aut facere explicabo enim tempora et accusamus obcaecati unde cum fugit consequuntur possimus, ducimus quaerat ex ipsam rem delectus impedit. Error eligendi dolorem labore accusantium. Laborum eligendi ex possimus voluptatibus voluptates ipsum doloremque, illum id, eaque, libero eum!", date: "13-12-2002", time: "13:00", type: "Bus BreakDown", read:false};
+ const msg2= {id:2, msg: " Bus Break down at Pappanamcode. Send technicians ", date: "13-12-2002", time: "13:00", type: "Bus BreakDown", read:false};
 
  const msg3= {id:3 ,msg: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam magnam laborum tempora? Aut facere explicabo enim tempora et accusamus obcaecati unde cum fugit consequuntur possimus, ducimus quaerat ex ipsam rem delectus impedit. Error eligendi dolorem labore accusantium. Laborum eligendi ex possimus voluptatibus voluptates ipsum doloremque, illum id, eaque, libero eum!", date: "13-12-2002", time: "13:00", type: "Bus BreakDown", read:false};
 

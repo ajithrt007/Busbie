@@ -1,8 +1,8 @@
 import React from "react";
-export default function Notifmsg(props) {
+export default function Notifmsg({props}) {
     return(
         <>
-        <div className="bg-white rounded-[10px] p-[10px] m-10">
+        <div className="bg-white rounded-[10px] p-[10px] m-10" style={{minWidth:"100%"}}>
         
             <div className="content">
                 {props.msg}
@@ -10,7 +10,7 @@ export default function Notifmsg(props) {
             <div className=" flex flex-row font-bold ">
                 {props.type}
                 <div className="flex justify-self-end p-10">
-                        {props.date}, {props.time}
+                 {props.type},       {props.date},{props.time}
                 </div>
             </div>
 
