@@ -1,20 +1,22 @@
 "use client";
-import React,{ useState, useLayoutEffect } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCloudArrowDown,
   faIndianRupeeSign,
 } from "@fortawesome/free-solid-svg-icons";
 import DropdownCustom from "@/component/DropdownCustom";
-import RoundedBtn from "@/component/RoundedBtn";
 import {
-  LineChart,
+  // LineChart,
+  // AreaChart,
+  Area,
   Line,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   Legend,
+  ComposedChart,
 } from "recharts";
 
 export default function Revenue() {
@@ -39,49 +41,155 @@ export default function Revenue() {
   ];
   const data = [
     {
-      name: "Page A",
+      name: "01:00AM",
       uv: 4000,
       pv: 2400,
       amt: 2400,
     },
     {
-      name: "Page B",
+      name: "02:00AM",
       uv: 3000,
       pv: 1398,
       amt: 2210,
     },
     {
-      name: "Page C",
+      name: "03:00AM",
       uv: 2000,
       pv: 9800,
       amt: 2290,
     },
     {
-      name: "Page D",
+      name: "04:00AM",
       uv: 2780,
       pv: 3908,
       amt: 2000,
     },
     {
-      name: "Page E",
+      name: "05:00AM",
       uv: 1890,
       pv: 4800,
       amt: 2181,
     },
     {
-      name: "Page F",
+      name: "06:00AM",
       uv: 2390,
       pv: 3800,
       amt: 2500,
     },
     {
-      name: "Page G",
+      name: "07:00AM",
       uv: 3490,
       pv: 4300,
       amt: 2100,
     },
+    {
+      name: "08:00AM",
+      uv: 4000,
+      pv: 2400,
+      amt: 2400,
+    },
+    {
+      name: "09:00AM",
+      uv: 2000,
+      pv: 9800,
+      amt: 2290,
+    },
+    {
+      name: "10:00AM",
+      uv: 2780,
+      pv: 3908,
+      amt: 2000,
+    },
+    {
+      name: "11:00AM",
+      uv: 1890,
+      pv: 4800,
+      amt: 2181,
+    },
+    {
+      name: "12:00AM",
+      uv: 2390,
+      pv: 3800,
+      amt: 2500,
+    },
+    {
+      name: "01:00PM",
+      uv: 3490,
+      pv: 4300,
+      amt: 2100,
+    },
+    {
+      name: "02:00PM",
+      uv: 4000,
+      pv: 2400,
+      amt: 2400,
+    },
+    {
+      name: "03:00PM",
+      uv: 3000,
+      pv: 1398,
+      amt: 2210,
+    },
+    {
+      name: "04:00PM",
+      uv: 2000,
+      pv: 9800,
+      amt: 2290,
+    },
+    {
+      name: "05:00PM",
+      uv: 2780,
+      pv: 3908,
+      amt: 2000,
+    },
+    {
+      name: "06:00PM",
+      uv: 1890,
+      pv: 4800,
+      amt: 2181,
+    },
+    {
+      name: "07:00PM",
+      uv: 2390,
+      pv: 3800,
+      amt: 2500,
+    },
+    {
+      name: "08:00PM",
+      uv: 3490,
+      pv: 4300,
+      amt: 2100,
+    },
+    {
+      name: "09:00PM",
+      uv: 4000,
+      pv: 2400,
+      amt: 2400,
+    },
+    {
+      name: "10:00PM",
+      uv: 3000,
+      pv: 1398,
+      amt: 2210,
+    },
+    {
+      name: "11:00PM",
+      uv: 2000,
+      pv: 9800,
+      amt: 2290,
+    },
+    {
+      name: "12:00PM",
+      uv: 2000,
+      pv: 9800,
+      amt: 2290,
+    },
   ];
-  const [width, setWidth] = useState(0)
+  const inputbox = {
+    border: "2px black",
+    backgroundColor: "transparent",
+  };
+  const [width, setWidth] = useState(0);
   useLayoutEffect(() => {
     const div = document.getElementById("widthAnalyzer");
     setWidth(div.offsetWidth);
@@ -91,67 +199,31 @@ export default function Revenue() {
       <h1 className=" text-[#D7425A] font-bold text-3xl">Schedule</h1>
       <div className="bg-white rounded-[10px] p-[20px] flex flex-col gap-5">
         <div className="flex flex-col gap-5 border-b-2">
-          <div className="flex justify-between items-center">
+          <div className="flex gap-2 mb-[2vh]">
             <DropdownCustom
               optionValues={domain}
               defaultValue="All Districts"
               dropdownColor="#E8E8E8"
               textColor="black"
             />
-            <div className="flex gap-5">
-              <div className="flex gap-3 items-center">
-                Organize by:
-                <DropdownCustom optionValues={organizeBy} defaultValue="Day" dropdownColor="#E8E8E8" textColor="black"/>
-              </div>
-              <button
-                style={{
-                  backgroundColor: "#E8E8E8",
-                  borderRadius: "10px",
-                  padding: "10px 15px",
-                }}
-              >
-                <FontAwesomeIcon icon={faCloudArrowDown} />
-              </button>
-            </div>
-          </div>
-          <div className="flex gap-2 mb-[2vh]">
-            <RoundedBtn buttonName="Total Turn Over" />
-            <RoundedBtn buttonName="Total Expense" />
-            <RoundedBtn buttonName="Profit" />
-            <RoundedBtn buttonName="Salary" />
-            <RoundedBtn buttonName="Fuel" />
-            <RoundedBtn buttonName="Machine Service" />
+            <input
+              type="text"
+              name="RouteSearch"
+              placeholder="Search for from"
+              id=""
+              style={inputbox}
+              className="bg-bg-color p-[10px] rounded-[10px]"
+              // onChange={() => {
+              //   searchKey = e.target.value;
+              // }}
+            />
           </div>
         </div>
         <div className="flex flex-col gap-10">
-          <div className="flex w-full]">
-            <div className="w-[50%] flex items-center justify-center">
-              <div className="flex flex-col gap-3">
-                <div className="flex items-center">
-                  <FontAwesomeIcon icon={faIndianRupeeSign} />
-                  <p>1000230</p>
-                </div>
-                <DropdownCustom optionValues={dayOption} defaultValue="Today" dropdownColor="#8884d8" textColor="white"/>
-              </div>
-            </div>
-            <div className="w-[50%] flex items-center justify-center">
-              <div className="flex flex-col gap-3">
-                <div className="flex items-center">
-                  <FontAwesomeIcon icon={faIndianRupeeSign} />
-                  <p>100023450</p>
-                </div>
-                <DropdownCustom
-                  optionValues={dayOption}
-                  defaultValue="Yesterday"
-                  dropdownColor="#82ca9d"
-                  textColor="white"
-                />
-              </div>
-            </div>
-          </div>
+          {/* <div className="flex w-full]"></div> */}
           <div className="w-full" id="widthAnalyzer">
-            <LineChart
-              width={width}
+            <ComposedChart
+              width={2000}
               height={300}
               data={data}
               margin={{
@@ -161,7 +233,7 @@ export default function Revenue() {
                 bottom: 5,
               }}
             >
-              <CartesianGrid strokeDasharray="3 3" />
+              <CartesianGrid strokeDasharray="5 4" />
               <XAxis dataKey="name" />
               <YAxis />
               <Tooltip />
@@ -173,8 +245,19 @@ export default function Revenue() {
                 activeDot={{ r: 8 }}
                 strokeWidth={3}
               />
-              <Line type="monotone" dataKey="uv" stroke="#82ca9d" strokeWidth={3}/>
-            </LineChart>
+              <Line
+                type="monotone"
+                dataKey="uv"
+                stroke="#82ca9d"
+                strokeWidth={3}
+              />
+              <Area
+                type="monotone"
+                dataKey="amt"
+                fill="#8884d8"
+                stroke="#8884d8"
+              />
+            </ComposedChart>
           </div>
         </div>
       </div>
