@@ -25,182 +25,173 @@ export default function Revenue() {
   const monthOption = ["This Month", "Previous Month", "Custom"];
   const yearOption = ["This Year", "Previous Year", "Custom"];
   const domain = [
-    "All Districts",
-    "Trivandrum",
-    "Kollam",
-    "Alappuzha",
-    "Ernakulam",
-    "Kozhikode",
-    "Kasarkode",
-    "Thrissur",
-    "Malappuram",
-    "Kottayam",
-    "Wayanad",
-    "Pathanamthitta",
-    "Kannur",
+    "Alappuzha - Thiruvananthapuram",
+    "Ernakulam	-	Kozhikode",
+    "Kollam	-	Thrissur",
+    "Malappuram	-	Palakkad",
+    "Pathanamthitta	-	Kasaragod",
+    "Thiruvananthapuram	-	Alappuzha",
+    "Thrissur	-	Ernakulam",
+    "Wayanad - Kollam",
   ];
   const data = [
     {
       name: "01:00AM",
       ss: 4000,
-      s1: 2400,
-      amt: 2400,
-      ss:2600,
-
+      KL15A7364: 2400,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
+      ss: 2600,
     },
     {
       name: "02:00AM",
       ss: 3000,
-      s1: 2400,
-      amt: 2210,
-      ss:2600,
-
+      KL15A7364: 2400,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
+      ss: 2600,
     },
     {
       name: "03:00AM",
       ss: 2000,
-      s2: 9800,
-      amt: 2290,
-      s0:2600,
-
+      KL15A7300: 9800,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
+      s0: 2600,
     },
     {
       name: "04:00AM",
       ss: 2780,
-      s2: 9800,
-      amt: 2000,
-      s0:2600,
+      KL15A7300: 9800,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
+      s0: 2600,
     },
     {
       name: "05:00AM",
       ss: 1890,
-      s3: 4800,
-      amt: 2181,
-
+      KL15A0090: 4800,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
     },
     {
       name: "06:00AM",
       ss: 2390,
-      s3: 4800,
-      amt: 2500,
-
+      KL15A0090: 4800,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
     },
     {
       name: "07:00AM",
       ss: 3490,
-      s3: 4800,
-      amt: 2100,
-      s2:2600,
+      KL15A0090: 4800,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
     },
     {
       name: "08:00AM",
       ss: 4000,
-      s3: 4800,
-      amt: 2400,
-      s2:2600,
+      KL15A0090: 4800,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
+      KL15A7300: 2600,
     },
     {
       name: "09:00AM",
+      KL15A7300: 2600,
       ss: 2000,
-      s4: 3000,
-      amt: 2290,
-      ss:2600,
+      KL15A2344: 3000,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
+      ss: 2600,
     },
     {
       name: "10:00AM",
+      KL15A7300: 2600,
       ss: 2780,
-      s4: 3000,
-      amt: 2000,
+      KL15A2344: 3000,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
     },
     {
       name: "11:00AM",
       ss: 1890,
-      s4: 3000,
-      amt: 2181,
+      KL15A2344: 3000,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
     },
     {
       name: "12:00AM",
       ss: 2390,
-      s5: 3800,
-      amt: 2500,
-      ss:2600,
+      KL15B3244: 3800,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
+      ss: 2600,
     },
     {
       name: "01:00PM",
       ss: 3490,
-      s5: 3800,
-      amt: 2100,
-      ss:2600,
+      KL15B3244: 3800,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
+      ss: 2600,
     },
     {
       name: "02:00PM",
       ss: 4000,
-      s6: 2400,
-      amt: 2400,
-      ss:2600,
+      KL15B377: 2400,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
+      ss: 2600,
     },
     {
       name: "03:00PM",
       ss: 3000,
-      s6: 2400,
-      amt: 2210,
-      ss:2600,
+      KL15B377: 2400,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
+      ss: 2600,
     },
     {
       name: "04:00PM",
       ss: 2000,
-      s6: 2400,
-      ss:2600,
-      amt: 2290,
+      KL15B377: 2400,
+      ss: 2600,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
     },
     {
       name: "05:00PM",
       ss: 2780,
-      s6:2400,
-      s1: 3908,
-      amt: 2000,
+      KL15B377: 2400,
+      KL15A7364: 3908,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
     },
     {
       name: "06:00PM",
       ss: 1890,
-      s7: 3800,
-      amt: 2181,
+      KL15C3487: 3800,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
     },
     {
       name: "07:00PM",
       ss: 2390,
-      s7: 3800,
-      amt: 2500,
+      KL15C3487: 3800,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
     },
     {
       name: "08:00PM",
       ss: 3490,
-      s1: 4300,
-      amt: 2100,
+      KL15A7364: 4300,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
     },
     {
       name: "09:00PM",
       ss: 4000,
-      s1: 2400,
-      amt: 2400,
+      KL15A7364: 2400,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
     },
     {
       name: "10:00PM",
       ss: 3000,
-      s1: 1398,
-      amt: 2210,
+      KL15A7364: 1398,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
     },
     {
       name: "11:00PM",
       ss: 2000,
-      s1: 9800,
-      amt: 2290,
+      KL15A7364: 9800,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
     },
     {
       name: "12:00PM",
       ss: 2000,
-      s1: 9800,
-      amt: 2290,
+      KL15A7364: 9800,
+      passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
     },
   ];
   const inputbox = {
@@ -220,21 +211,21 @@ export default function Revenue() {
           <div className="flex gap-2 mb-[2vh]">
             <DropdownCustom
               optionValues={domain}
-              defaultValue="All Districts"
+              defaultValue="Ernakulam	-	Kozhikode"
               dropdownColor="#E8E8E8"
               textColor="black"
             />
-            <input
+            {/* <input
               type="text"
               name="RouteSearch"
               placeholder="Search for from"
               id=""
               style={inputbox}
               className="bg-bg-color p-[10px] rounded-[10px]"
-              // onChange={() => {
-              //   searchKey = e.target.value;
-              // }}
-            />
+              onChange={() => {
+                searchKey = e.target.value;
+              }}
+            /> */}
           </div>
         </div>
         <div className="flex flex-col gap-10 overflow-x-scroll">
@@ -242,7 +233,7 @@ export default function Revenue() {
           <div className="w-full" id="widthAnalyzer">
             <ComposedChart
               width={2000}
-              height={300}
+              height={420}
               data={data}
               margin={{
                 top: 5,
@@ -256,90 +247,102 @@ export default function Revenue() {
               <YAxis />
               <Tooltip />
               <Legend />
-              <Line
+              {/* <Line
                 type="monotone"
                 dataKey="pv"
-                stroke="#8884d8"
+                stroke="#D7425A"
                 activeDot={{ r: 8 }}
                 strokeWidth={3}
               />
               <Line
                 type="monotone"
                 dataKey="uv"
-                stroke="#82ca9d"
+                stroke="#D7425A"
                 strokeWidth={3}
-              />
-              <Line
+              /> */}
+              {/* <Line
                 type="monotone"
                 dataKey="ss"
                 stroke="#82ca9d"
                 strokeWidth={3}
-              />
+              /> */}
               <Line
                 type="monotone"
                 dataKey="s0"
-                stroke="#82ca9d"
+                stroke="#D7425A"
+                strokeWidth={3}
+              />
+              {/* <Line
+                type="monotone"
+                dataKey="KL15A7364"
+                stroke="#D7425A"
+                strokeWidth={3}
+              /> */}
+              <Line
+                type="monotone"
+                dataKey="KL15A7300"
+                stroke="#D7425A"
                 strokeWidth={3}
               />
               <Line
                 type="monotone"
-                dataKey="s1"
-                stroke="#82ca9d"
+                dataKey="KL15A0090"
+                stroke="#D7425A"
                 strokeWidth={3}
               />
               <Line
                 type="monotone"
-                dataKey="s2"
-                stroke="#82ca9d"
+                dataKey="KL15A2344"
+                stroke="#D7425A"
                 strokeWidth={3}
               />
               <Line
                 type="monotone"
-                dataKey="s3"
-                stroke="#82ca9d"
+                dataKey="KL15B3244"
+                stroke="#D7425A"
                 strokeWidth={3}
               />
               <Line
                 type="monotone"
-                dataKey="s4"
-                stroke="#82ca9d"
+                dataKey="KL15B377"
+                stroke="#D7425A"
                 strokeWidth={3}
               />
               <Line
                 type="monotone"
-                dataKey="s5"
-                stroke="#82ca9d"
-                strokeWidth={3}
-              />
-              <Line
-                type="monotone"
-                dataKey="s6"
-                stroke="#82ca9d"
-                strokeWidth={3}
-              />
-              <Line
-                type="monotone"
-                dataKey="s7"
-                stroke="#82ca9d"
+                dataKey="KL15C3487"
+                stroke="#D7425A"
                 strokeWidth={3}
               />
               <Line
                 type="monotone"
                 dataKey="s8"
-                stroke="#82ca9d"
+                stroke="#D7425A"
                 strokeWidth={3}
               />
               <Line
                 type="monotone"
                 dataKey="s9"
-                stroke="#82ca9d"
+                stroke="#D7425A"
                 strokeWidt={3}
               />
+              <defs>
+                <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
+                  <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
+                </linearGradient>
+                {/* <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8}/>
+      <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
+    </linearGradient> */}
+              </defs>
               <Area
                 type="monotone"
-                dataKey="amt"
-                fill="#8884d8"
+                dataKey="passenger_demand"
+                // fill="#8884d8"
                 stroke="#8884d8"
+                fillOpacity={1}
+                fill="url(#colorUv)"
               />
             </ComposedChart>
           </div>
