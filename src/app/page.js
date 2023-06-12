@@ -5,14 +5,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/navigation";
 import ErrorMsg from "@/component/ErrorMsg";
+import Loading from "@/component/Loading";
 
 export default function Login() {
   const router = useRouter();
   var inputUsername, inputPassword;
   const [error, setError] = useState({ status: false, msg: "" });
+  const [loading, setLoading] = useState(false);
   // console.log(error)
  const [errorStatus,serErrorStatus] = useState(false)
   async function check() {
+    setLoading(true)
     await fetch(
       "http://localhost:3000/api/login?username=" +
         inputUsername +
@@ -28,12 +31,14 @@ export default function Login() {
           setError({ status: true, msg: "Wrong Credentials" });
           serErrorStatus(true)
           console.log("Wrong Credentials");
+          setLoading(false)
         }
       })
       .catch((error) => {
         setError({ status: true, msg: "400 Server Error" });
         serErrorStatus(true)
         console.log("Some Error happend");
+        setLoading(false)
       });
   }
   useEffect(()=>{
@@ -93,6 +98,7 @@ export default function Login() {
               Login
             </button>
           </div>
+          {loading && <div className="flex justify-center"><div className="flex items-center h-[30px] w-[100px] gap-[10px]"><Loading/> Checking..</div></div>}
         </div>
       </div>
       <img
