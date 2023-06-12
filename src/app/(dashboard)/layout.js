@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
       <body style={{ backgroundColor: "#E8E8E8" }}>
         <div className="flex">
           <Sidebar/>
-          <div className="flex flex-col w-full p-[1.5vw] ml-[87px]">
+          <div className="viji flex flex-col p-[1.5vw] ml-[87px]" style={{width: "calc(100% - 87px) !important"}}>
             <div className="flex justify-between w-full items-center mb-[2vh]">
               <Time />
               <div className="p-[10px] bg-secondary rounded-lg flex gap-2 items-center">

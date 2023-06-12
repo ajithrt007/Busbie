@@ -42,146 +42,164 @@ export default function Revenue() {
   const data = [
     {
       name: "01:00AM",
-      uv: 4000,
-      pv: 2400,
+      ss: 4000,
+      s1: 2400,
       amt: 2400,
+      ss:2600,
+
     },
     {
       name: "02:00AM",
-      uv: 3000,
-      pv: 1398,
+      ss: 3000,
+      s1: 2400,
       amt: 2210,
+      ss:2600,
+
     },
     {
       name: "03:00AM",
-      uv: 2000,
-      pv: 9800,
+      ss: 2000,
+      s2: 9800,
       amt: 2290,
+      s0:2600,
+
     },
     {
       name: "04:00AM",
-      uv: 2780,
-      pv: 3908,
+      ss: 2780,
+      s2: 9800,
       amt: 2000,
+      s0:2600,
     },
     {
       name: "05:00AM",
-      uv: 1890,
-      pv: 4800,
+      ss: 1890,
+      s3: 4800,
       amt: 2181,
+
     },
     {
       name: "06:00AM",
-      uv: 2390,
-      pv: 3800,
+      ss: 2390,
+      s3: 4800,
       amt: 2500,
+
     },
     {
       name: "07:00AM",
-      uv: 3490,
-      pv: 4300,
+      ss: 3490,
+      s3: 4800,
       amt: 2100,
+      s2:2600,
     },
     {
       name: "08:00AM",
-      uv: 4000,
-      pv: 2400,
+      ss: 4000,
+      s3: 4800,
       amt: 2400,
+      s2:2600,
     },
     {
       name: "09:00AM",
-      uv: 2000,
-      pv: 9800,
+      ss: 2000,
+      s4: 3000,
       amt: 2290,
+      ss:2600,
     },
     {
       name: "10:00AM",
-      uv: 2780,
-      pv: 3908,
+      ss: 2780,
+      s4: 3000,
       amt: 2000,
     },
     {
       name: "11:00AM",
-      uv: 1890,
-      pv: 4800,
+      ss: 1890,
+      s4: 3000,
       amt: 2181,
     },
     {
       name: "12:00AM",
-      uv: 2390,
-      pv: 3800,
+      ss: 2390,
+      s5: 3800,
       amt: 2500,
+      ss:2600,
     },
     {
       name: "01:00PM",
-      uv: 3490,
-      pv: 4300,
+      ss: 3490,
+      s5: 3800,
       amt: 2100,
+      ss:2600,
     },
     {
       name: "02:00PM",
-      uv: 4000,
-      pv: 2400,
+      ss: 4000,
+      s6: 2400,
       amt: 2400,
+      ss:2600,
     },
     {
       name: "03:00PM",
-      uv: 3000,
-      pv: 1398,
+      ss: 3000,
+      s6: 2400,
       amt: 2210,
+      ss:2600,
     },
     {
       name: "04:00PM",
-      uv: 2000,
-      pv: 9800,
+      ss: 2000,
+      s6: 2400,
+      ss:2600,
       amt: 2290,
     },
     {
       name: "05:00PM",
-      uv: 2780,
-      pv: 3908,
+      ss: 2780,
+      s6:2400,
+      s1: 3908,
       amt: 2000,
     },
     {
       name: "06:00PM",
-      uv: 1890,
-      pv: 4800,
+      ss: 1890,
+      s7: 3800,
       amt: 2181,
     },
     {
       name: "07:00PM",
-      uv: 2390,
-      pv: 3800,
+      ss: 2390,
+      s7: 3800,
       amt: 2500,
     },
     {
       name: "08:00PM",
-      uv: 3490,
-      pv: 4300,
+      ss: 3490,
+      s1: 4300,
       amt: 2100,
     },
     {
       name: "09:00PM",
-      uv: 4000,
-      pv: 2400,
+      ss: 4000,
+      s1: 2400,
       amt: 2400,
     },
     {
       name: "10:00PM",
-      uv: 3000,
-      pv: 1398,
+      ss: 3000,
+      s1: 1398,
       amt: 2210,
     },
     {
       name: "11:00PM",
-      uv: 2000,
-      pv: 9800,
+      ss: 2000,
+      s1: 9800,
       amt: 2290,
     },
     {
       name: "12:00PM",
-      uv: 2000,
-      pv: 9800,
+      ss: 2000,
+      s1: 9800,
       amt: 2290,
     },
   ];
@@ -219,7 +237,7 @@ export default function Revenue() {
             />
           </div>
         </div>
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10 overflow-x-scroll">
           {/* <div className="flex w-full]"></div> */}
           <div className="w-full" id="widthAnalyzer">
             <ComposedChart
@@ -250,6 +268,72 @@ export default function Revenue() {
                 dataKey="uv"
                 stroke="#82ca9d"
                 strokeWidth={3}
+              />
+              <Line
+                type="monotone"
+                dataKey="ss"
+                stroke="#82ca9d"
+                strokeWidth={3}
+              />
+              <Line
+                type="monotone"
+                dataKey="s0"
+                stroke="#82ca9d"
+                strokeWidth={3}
+              />
+              <Line
+                type="monotone"
+                dataKey="s1"
+                stroke="#82ca9d"
+                strokeWidth={3}
+              />
+              <Line
+                type="monotone"
+                dataKey="s2"
+                stroke="#82ca9d"
+                strokeWidth={3}
+              />
+              <Line
+                type="monotone"
+                dataKey="s3"
+                stroke="#82ca9d"
+                strokeWidth={3}
+              />
+              <Line
+                type="monotone"
+                dataKey="s4"
+                stroke="#82ca9d"
+                strokeWidth={3}
+              />
+              <Line
+                type="monotone"
+                dataKey="s5"
+                stroke="#82ca9d"
+                strokeWidth={3}
+              />
+              <Line
+                type="monotone"
+                dataKey="s6"
+                stroke="#82ca9d"
+                strokeWidth={3}
+              />
+              <Line
+                type="monotone"
+                dataKey="s7"
+                stroke="#82ca9d"
+                strokeWidth={3}
+              />
+              <Line
+                type="monotone"
+                dataKey="s8"
+                stroke="#82ca9d"
+                strokeWidth={3}
+              />
+              <Line
+                type="monotone"
+                dataKey="s9"
+                stroke="#82ca9d"
+                strokeWidt={3}
               />
               <Area
                 type="monotone"
