@@ -11,6 +11,7 @@ import Popup from "./Popup";
 export default function RouteRow({ sl, fromto, nob, stime, avrpro, avgexp }) {
   const rowStyle = {
     padding: "10px 15px",
+    backgroundColor: "#D9D9D9",
   };
   const busOption = [
     "All Types",
@@ -33,7 +34,7 @@ export default function RouteRow({ sl, fromto, nob, stime, avrpro, avgexp }) {
     transform: "rotate(180deg)",
   };
   return (
-    <div className="bg-secondary rounded-[10px]" style={rowStyle}>
+    <div className="rounded-[10px]" style={rowStyle}>
       <div className="flex items-center justify-between">
         <div className="flex w-full gap-4">
           <p style={{ width: "5%" }}>{sl}</p>
@@ -105,7 +106,7 @@ export default function RouteRow({ sl, fromto, nob, stime, avrpro, avgexp }) {
           <RouteInnerRow
             isl="1"
             ifromto="Trivandrum-Parassala"
-            inob=<Popup/>
+            inob=<Popup />
             istime="5am-2am"
             iavrpro="15,00,000"
             iavgexp="40,000"
@@ -113,7 +114,7 @@ export default function RouteRow({ sl, fromto, nob, stime, avrpro, avgexp }) {
           <RouteInnerRow
             isl="1"
             ifromto="Trivandrum-Parassala"
-            inob=<Popup/>
+            inob=<Popup />
             istime="5am-2am"
             iavrpro="15,00,000"
             iavgexp="40,000"
@@ -121,7 +122,7 @@ export default function RouteRow({ sl, fromto, nob, stime, avrpro, avgexp }) {
           <RouteInnerRow
             isl="1"
             ifromto="Trivandrum-Parassala"
-            inob=<Popup/>
+            inob=<Popup />
             istime="5am-2am"
             iavrpro="15,00,000"
             iavgexp="40,000"
@@ -129,7 +130,7 @@ export default function RouteRow({ sl, fromto, nob, stime, avrpro, avgexp }) {
           <RouteInnerRow
             isl="1"
             ifromto="Trivandrum-Parassala"
-            inob=<Popup/>
+            inob=<Popup />
             istime="5am-2am"
             iavrpro="15,00,000"
             iavgexp="40,000"
@@ -137,7 +138,7 @@ export default function RouteRow({ sl, fromto, nob, stime, avrpro, avgexp }) {
           <RouteInnerRow
             isl="1"
             ifromto="Trivandrum-Parassala"
-            inob=<Popup/>
+            inob=<Popup />
             istime="5am-2am"
             iavrpro="15,00,000"
             iavgexp="40,000"
@@ -145,7 +146,7 @@ export default function RouteRow({ sl, fromto, nob, stime, avrpro, avgexp }) {
           <RouteInnerRow
             isl="1"
             ifromto="Trivandrum-Parassala"
-            inob=<Popup/>
+            inob=<Popup />
             istime="5am-2am"
             iavrpro="15,00,000"
             iavgexp="40,000"
