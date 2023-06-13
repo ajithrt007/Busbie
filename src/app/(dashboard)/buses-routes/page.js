@@ -36,7 +36,7 @@ export default function BusRoute() {
   return (
     <>
       <Add buttonName="Add Route" />
-      <h1 className=" text-[#D7425A] font-bold text-3xl">Buses and Routes</h1>
+      <h1 className="text-[#D7425A] font-bold text-3xl pb-5">Employees</h1>
       <div className="bg-white rounded-[10px] p-[20px] flex flex-col gap-5">
         <h1>Routes</h1>
         <div className="flex flex-col gap-2">
@@ -199,7 +199,7 @@ export default function BusRoute() {
         </div>
       </div>
 
-      <Popup/>
+      <Popup />
     </>
   );
 }
