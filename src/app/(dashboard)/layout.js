@@ -3,6 +3,7 @@ import Time from "@/component/Time";
 import Sidebar from "@/component/Sidebar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import Profile from "@/component/Profile";
 
 export default function RootLayout({ children }) {
   return (
@@ -16,10 +17,7 @@ export default function RootLayout({ children }) {
           >
             <div className="flex justify-between w-full items-center mb-[2vh]">
               <Time />
-              <div className="p-[10px] bg-secondary rounded-lg flex gap-2 items-center">
-                Profile
-                <FontAwesomeIcon icon={faUser} className="h-[15px]" />
-              </div>
+              <Profile />
             </div>
             <div>{children}</div>
           </div>
