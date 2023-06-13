@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import NavbarOption from "@/component/NavbarOption";
 import {
@@ -9,25 +9,21 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 import Link from "next/link";
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 
-export default function Sidebar() {  
+export default function Sidebar() {
   const pathname = usePathname();
   var activeRoute;
-  if(pathname == '/schedule'){
-    activeRoute = "Schedule"
-  }
-  else if(pathname == '/buses-routes'){
-    activeRoute = "Buses and Routes"
-  }
-  else if(pathname == '/employee'){
-    activeRoute = "Employee Management"
-  }
-  else if(pathname == '/notification'){
-    activeRoute = "Notification"
-  }
-  else{
-    activeRoute = "Revenue"
+  if (pathname == "/schedule") {
+    activeRoute = "Schedule";
+  } else if (pathname == "/buses-routes") {
+    activeRoute = "Buses and Routes";
+  } else if (pathname == "/employee") {
+    activeRoute = "Employee Management";
+  } else if (pathname == "/notification") {
+    activeRoute = "Notification";
+  } else {
+    activeRoute = "Revenue";
   }
   const [expand, setExpand] = useState(false);
   const [isActive, setIsActive] = useState(activeRoute);
@@ -41,17 +37,22 @@ export default function Sidebar() {
   }
   return (
     <div
-      className="bg-secondary"
+      // className="bg-[#D9D9D9]"
       onMouseEnter={() => setExpand(true)}
       onMouseLeave={() => setExpand(false)}
-      style={{height: '100vh', position: 'fixed',zIndex: '100'}}
+      style={{
+        height: "100vh",
+        position: "fixed",
+        zIndex: "100",
+        backgroundColor: "#D9D9D9",
+      }}
     >
       <div>
         <div style={style}>
           <img src={file} alt="Busbie" />
         </div>
         <div>
-          <Link href="/revenue" >
+          <Link href="/revenue">
             <NavbarOption
               optionName="Revenue"
               logo={faIndianRupeeSign}

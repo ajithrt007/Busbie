@@ -11,7 +11,8 @@ export default function Profile() {
   const router = useRouter();
   return (
     <button
-      className="p-[10px] bg-secondary rounded-lg flex gap-2 items-center"
+      className="p-[10px] flex gap-2 items-center"
+      style={{ backgroundColor: "#D9D9D9", borderRadius: "10px" }}
       onClick={() => {
         router.push("/");
       }}
