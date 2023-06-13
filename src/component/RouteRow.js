@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import DropdownCustom from "@/component/DropdownCustom";
 import RouteInnerRow from "./RouteInnerRow";
-
+import Popup from "./Popup";
 export default function RouteRow({ sl, fromto, nob, stime, avrpro, avgexp }) {
   const rowStyle = {
     padding: "10px 15px",
@@ -105,7 +105,7 @@ export default function RouteRow({ sl, fromto, nob, stime, avrpro, avgexp }) {
           <RouteInnerRow
             isl="1"
             ifromto="Trivandrum-Parassala"
-            inob="52"
+            inob=<Popup/>
             istime="5am-2am"
             iavrpro="15,00,000"
             iavgexp="40,000"
@@ -113,7 +113,7 @@ export default function RouteRow({ sl, fromto, nob, stime, avrpro, avgexp }) {
           <RouteInnerRow
             isl="1"
             ifromto="Trivandrum-Parassala"
-            inob="52"
+            inob=<Popup/>
             istime="5am-2am"
             iavrpro="15,00,000"
             iavgexp="40,000"
@@ -121,7 +121,7 @@ export default function RouteRow({ sl, fromto, nob, stime, avrpro, avgexp }) {
           <RouteInnerRow
             isl="1"
             ifromto="Trivandrum-Parassala"
-            inob="52"
+            inob=<Popup/>
             istime="5am-2am"
             iavrpro="15,00,000"
             iavgexp="40,000"
@@ -129,7 +129,7 @@ export default function RouteRow({ sl, fromto, nob, stime, avrpro, avgexp }) {
           <RouteInnerRow
             isl="1"
             ifromto="Trivandrum-Parassala"
-            inob="52"
+            inob=<Popup/>
             istime="5am-2am"
             iavrpro="15,00,000"
             iavgexp="40,000"
@@ -137,7 +137,7 @@ export default function RouteRow({ sl, fromto, nob, stime, avrpro, avgexp }) {
           <RouteInnerRow
             isl="1"
             ifromto="Trivandrum-Parassala"
-            inob="52"
+            inob=<Popup/>
             istime="5am-2am"
             iavrpro="15,00,000"
             iavgexp="40,000"
@@ -145,7 +145,7 @@ export default function RouteRow({ sl, fromto, nob, stime, avrpro, avgexp }) {
           <RouteInnerRow
             isl="1"
             ifromto="Trivandrum-Parassala"
-            inob="52"
+            inob=<Popup/>
             istime="5am-2am"
             iavrpro="15,00,000"
             iavgexp="40,000"

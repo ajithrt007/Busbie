@@ -40,7 +40,7 @@ export default function Revenue() {
       ss: 4000,
       KL15A7364: 2400,
       passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
-      ss: 2600,
+
     },
     {
       name: "02:00AM",
@@ -54,14 +54,14 @@ export default function Revenue() {
       ss: 2000,
       KL15A7300: 9800,
       passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
-      s0: 2600,
+      KL25A9330: 2600,
     },
     {
       name: "04:00AM",
       ss: 2780,
       KL15A7300: 9800,
       passenger_demand: Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000,
-      s0: 2600,
+      KL25A9330: 2600,
     },
     {
       name: "05:00AM",

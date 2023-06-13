@@ -740,17 +740,17 @@ export default function Revenue() {
             </div>
           </div>
           <div className="flex gap-2 mb-[2vh]">
-            <RoundedBtn buttonName="Total Turn Over" onClicky={change} flag={activeBtn === 'Total Turn Over' ? 1 : 0}/>
+            <RoundedBtn buttonName="Total Turn Over" onClicky={change} flag={activeBtn === 'Total Turn Over' ? true : false}/>
             <RoundedBtn buttonName="Total Expense" onClicky={change}
-            flag={activeBtn === 'Total Expense' ? 1 : 0}/>
+            flag={activeBtn === 'Total Expense' ? true : false}/>
             <RoundedBtn buttonName="Profit" onClicky={change}
-            flag={activeBtn === 'Profit' ? 1 : 0}/>
+            flag={activeBtn === 'Profit' ? true : false}/>
             <RoundedBtn buttonName="Salary" onClicky={change}
-            flag={activeBtn === 'Salary' ? 1 : 0}/>
+            flag={activeBtn === 'Salary' ? true : false}/>
             <RoundedBtn buttonName="Fuel" onClicky={change}
-            flag={activeBtn === 'Fuel' ? 1 : 0}/>
+            flag={activeBtn === 'Fuel' ? true : false}/>
             <RoundedBtn buttonName="Machine Service" onClicky={change}
-            flag={activeBtn === 'Machine Service' ? 1 : 0}/>
+            flag={activeBtn === 'Machine Service' ? true : false}/>
           </div>
         </div>
         <div className="flex flex-col gap-10">

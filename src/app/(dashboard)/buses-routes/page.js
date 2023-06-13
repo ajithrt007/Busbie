@@ -199,7 +199,6 @@ export default function BusRoute() {
         </div>
       </div>
 
-      <Popup />
     </>
   );
 }

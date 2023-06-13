@@ -66,13 +66,13 @@ const data = {
 
  const msg2= {id:2, msg: " Bus Break down at Pappanamcode. Send technicians ", date: "13-12-2002", time: "13:00", type: "Bus BreakDown", read:false};
 
- const msg3= {id:3 ,msg: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam magnam laborum tempora? Aut facere explicabo enim tempora et accusamus obcaecati unde cum fugit consequuntur possimus, ducimus quaerat ex ipsam rem delectus impedit. Error eligendi dolorem labore accusantium. Laborum eligendi ex possimus voluptatibus voluptates ipsum doloremque, illum id, eaque, libero eum!", date: "13-12-2002", time: "13:00", type: "Bus BreakDown", read:false};
+ const msg3= {id:3 ,msg: "Bus breakdown: Route 123", date: "13-12-2002", time: "13:00", type: "Bus BreakDown", read:false};
 
- const msg4= {id:4 ,msg: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, dolores sed? Distinctio placeat laudantium quisquam?", date: "13-12-2002", time: "13:00", type: "Bus BreakDown", read:false};
+ const msg4= {id:4 ,msg: "Bus breakdown: Route 112", date: "13-12-2002", time: "13:00", type: "Bus BreakDown", read:false};
 
- const msg5= {id:5 ,msg: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur incidunt cupiditate quae a dolor deleniti dolore eaque voluptate similique enim asperiores eius voluptatibus, officia unde amet consequuntur repellat, minima rerum.", date: "13-12-2002", time: "13:00", type: "Bus BreakDown", read:false};
+ const msg5= {id:5 ,msg: "Bus breakdown: Route 423", date: "13-12-2002", time: "13:00", type: "Bus BreakDown", read:false};
 
- const msg6= {id:6 ,msg: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo repellendus doloribus ipsum!", date: "13-12-2002", time: "13:00", type: "Bus BreakDown", read:false};
+ const msg6= {id:6 ,msg: "Technincias needed", date: "13-12-2002", time: "13:00", type: "Bus BreakDown", read:false};
 
 
 export default Page

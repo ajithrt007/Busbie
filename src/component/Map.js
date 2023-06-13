@@ -52,7 +52,8 @@ function Map() {
   const libraries = ["places"];
   const mapContainerStyle = {
     width: '100%',
-    height: '400px'
+    height: '400px',
+    borderRadius:"15px"
   };
   const center = {  
     lat: 8.472397,
